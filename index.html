@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Ariza yozish tartiblari</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .header {
+            background-color: #8B0000;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .button {
+            display: block;
+            max-width: 700px;
+            margin: 14px auto;
+            padding: 16px 20px;
+            background-color: #8B0000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #a30000;
+        }
+
+        .section {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .a4-image {
+            display: block;
+            margin: 20px auto;
+            width: 100%;       /* ekran kengligiga moslashadi */
+            max-width: 794px;  /* A4 kengligi piksel */
+            height: auto;      /* proporsiyani saqlaydi */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background-color: #8B0000;
+            color: #fff;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #a30000;
+        }
+
+        .contact {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #dddddd;
+            text-align: center;
+        }
+
+        .contact h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin: 6px 0;
+            font-size: 16px;
+        }
+
+        .contact a {
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    ARIZA YOZISH TARTIBLARI
+</div>
+
+<div class="container">
+    <!-- Asosiy tugmalar -->
+    <div id="main-buttons">
+        <div class="button" onclick="showSection('chaqiruv')">
+            Chaqiruv yoki guruh o‘zgartirish bo‘yicha ariza shabloni
+        </div>
+        <div class="button" onclick="showSection('kochirish')">
+            Samarqand v-ga o‘qish ko‘chirish bo‘yicha ariza shabloni
+        </div>
+        <div class="button" onclick="showSection('familiya')">
+            Familiya o‘zgartirish bo‘yicha ariza shabloni
+        </div>
+        <div class="button" onclick="showSection('akademik')">
+            Akademik ta’til uchun ariza yozish tartibi
+        </div>
+        <div class="button" onclick="showSection('appilatsiya')">
+            Imtihon ballari bo‘yicha appilatsiyaga ariza shabloni
+        </div>
+        <div class="button" onclick="showSection('kontrakt')">
+            Kontrakt to‘lovi bo‘yicha ariza yozish tartibi
+        </div>
+    </div>
+
+    <!-- Bo'limlar -->
+    <div id="chaqiruv" class="section">
+        <h2>Chaqiruv yoki guruh o‘zgartirish arizasi</h2>
+        <p><h3>Ariza yozishingiz mumkin, ariza shablonidagi bo'sh joylar o'rniga o'z ma'lumotlaringizni kiriting.</h3></p>
+        <ul>
+            <li>Arizangiz mazmuni aniq bo'lishi kerak. Arizaga <b>asosli sabab</b> va <b>hujjatlar</b> bo'lishi lozim, asosli hujjatlar bo'lmasa ariza qabul qilinmaydi.</li>
+            <li>Ariza <b>OQ</b> qog'ozga talabaning shaxsan o'zi o'z qo'llari bilan ruchkada yozilishi lozim! ✅</li>
+            <li>Istasangiz bu shablonni chiqazib olib yozishingiz mumkin. ✅</li>
+            <li>Kompyuterda arizangizni yozib imzoni o'z <b>qo'lingiz</b> bilan qo'yib yuborsangiz ham bo'ladi. ✅</li>
+            <li>Arizaga asos taqdim qilishingiz kerak, ya'ni arizada yozgan gaplaringizni tasdiqlab turuvchi hujjat berasiz.</li>
+            <li></li>
+            <li><b>Masalan:</b></li>
+            <li>Sog'lig'ingiz sababli bo'lsa, tibbiy ma'lumotnoma.</li>
+            <li>Ishingiz sababli bo'lsa, ish joyingiz sizga o'qishingiz uchun xat qilib berishi kerak.</li>
+            <li>Homilador bo'lsangiz, homiladorligingiz to'g'risida tibbiy ma'lumotnoma.</li>
+            <li>Farzandingiz bo'lsa, 1 yoshdan yuqori bo'lmasa, farzandingizni tug'ilganlik to'g'risidagi guvohnomasini taqdim qiling. </li>
+            <li>Chet davlatda bo'lsangiz, vizangiz passportingizni asosiy beti bilan o'zbekistondan chiqib ketganingiz to'g'risidagi urilgan pechati tomonini qo'shimcha asos qilib yuborib berishingiz kerak. </li>
+            <li></li>
+            <li><b>To'liq kompyuterda yozilgan imzo qo'lda qo'yilmagan holatda ariza qabul qilinmaydi.❌</b></li>
+            <li><b>Arizaga asosli hujjatlar bo'lmasa qabul qilinmaydi. ❌</b></li>
+            <li><b>O'qib bo'lmaydigan sifatsiz yuborilgan arizalar qabul qilinmaydi. ❌</b></li>
+            <li><h3>Arizalarni iloji bo'lsa PDF formatda yuboring.</h3></li>
+            <li><b>Eslatib o'tamiz, arizani yozib botga yuborganingizdan so'ng operatorlarimizga aloqaga chiqib ariza yuborib qo'ydim deb ogohlantirib qo'yishingizni so'raymiz.</b></li>
+        </ul>
+        <img src="chaqiruv.jpg" alt="Chaqiruv arizasi" class="a4-image">
+        <div class="back-button" onclick="hideSection('chaqiruv')">Ortga</div>
+    </div>
+
+    <div id="kochirish" class="section">
+        <h2>Samarqandga o‘qish ko‘chirish bo‘yicha ariza shabloni</h2>
+        <p><h3>Arizani pastdagi shablonga qarab, QO'LDA oq qog'ozga yozib qayta telegram botimizga yuborib berishingiz so'raymiz.</h3></p>
+        <p>Kompyuter yoki telefonda online yozilgan ruchka ishlatilmagan arizalarni qabul qila olmaymiz.</p>
+        <p><b>Arizani yozib rasmga olib yoki PDF formatda qilib botga yuborganingizdan so'ng, operatorlarimizga aloqaga chiqib arizani yuborib qo'ydim deb ogohlantirib qo'yishingizni so'raymiz. </b></p>
+        <img src="samarqand.jpg" alt="Ko‘chirish arizasi" class="a4-image">
+        <div class="back-button" onclick="hideSection('kochirish')">Ortga</div>
+    </div>
+
+    <div id="familiya" class="section">
+        <h2>Familiya o‘zgartirish bo‘yicha ariza shabloni</h2>
+        <p>Hurmatli talaba, ariza yozish tartiblari bilan diqqat bilan tanishib chiqing!</p>
+        <p>*Ariza shabloniga qarab A4 formatga qo'lda yozib berishingiz kerak;</p>
+        <p>*Arizani PDF formatda yuborib berishingiz kerak;</p>
+        <p>*Arizaga qo'shib yangi passportingiz (oldi-orqa) va ZAKS qog'ozini taqdim qilishingiz lozim;</p>
+        <p><h3>Eslatib o'tamiz, arizani yozib botga yuborganingizdan so'ng operatorlarimizga aloqaga chiqib ariza yuborib qo'ydim deb ogohlantirib qo'yishingizni so'raymiz.</h3></p>
+        <img src="familiya.jpg" alt="Familiya arizasi" class="a4-image">
+        <div class="back-button" onclick="hideSection('familiya')">Ortga</div>
+    </div>
+
+    <div id="akademik" class="section">
+        <h2>Akademik ta’til arizasi</h2>
+        <p><h3>Hurmatli talaba!</h3></p>
+        <p>Akademik ta'til yoki o'qish muzlatish uchun arizalarni faqat o'quv binosiga tashrif buyurib yozasiz!</p>
+        <div class="back-button" onclick="hideSection('akademik')">Ortga</div>
+    </div>
+
+    <div id="appilatsiya" class="section">
+        <h2>Imtihon ballari bo'yicha appilatsiya arizasi</h2>
+        <p><b>Hurmatli talaba!</b></p>
+        <p>Imtihon ballari bo'yicha apilatsiyaga ariza yozish uchun shablonni operatorlardan olasiz!</p>
+        <div class="back-button" onclick="hideSection('appilatsiya')">Ortga</div>
+    </div>
+
+    <div id="kontrakt" class="section">
+        <h2>Kontrakt to‘lovi bo'yicha ariza</h2>
+        <p><b>Hurmatli talaba!</b></p>
+        <p>Kontrakt to'lovi bo'yicha ariza shablonini operatorlar bilan gaplashib operatorlarimiz tomonidan olasiz!</p>
+        <div class="back-button" onclick="hideSection('kontrakt')">Ortga</div>
+    </div>
+
+    <!-- Aloqa -->
+    <div class="contact">
+        <h3>Aloqa uchun</h3>
+        <p>📞 +998 55 508 37 37</p>
+        <p>🤖 Rasmiy telegram bot:
+            <a href="https://t.me/isftstudents_bot" target="_blank">@isftstudents_bot</a>
+        </p>
+        <p>📢 Rasmiy telegram kanal:
+            <a href="https://t.me/isft7" target="_blank">@isft7</a>
+        </p>
+    </div>
+</div>
+
+<script>
+    function showSection(id) {
+        document.getElementById('main-buttons').style.display = 'none';
+        document.getElementById(id).style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function hideSection(id) {
+        document.getElementById(id).style.display = 'none';
+        document.getElementById('main-buttons').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
