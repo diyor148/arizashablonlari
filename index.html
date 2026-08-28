@@ -2,222 +2,1152 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <title>Ariza yozish tartiblari</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#7A0000">
+    <meta name="description" content="ISFT Instituti talabalari uchun ariza yozish tartiblari va rasmiy shablonlari">
+    <title>Ariza yozish tartiblari - ISFT</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        body {
+        :root {
+            --primary: #8B0000;
+            --primary-dark: #6e0000;
+            --primary-light: #ab0909;
+            --primary-subtle: #fdf2f2;
+            --accent: #b91c1c;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --warning-bg: #fffbeb;
+            --warning-border: #fde68a;
+            --warning-text: #92400e;
+            --info-bg: #eff6ff;
+            --info-border: #bfdbfe;
+            --info-text: #1e40af;
+            --success-bg: #f0fdf4;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px -5px rgba(139, 0, 0, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
         .header {
-            background-color: #8B0000;
+            background: linear-gradient(135deg, #700000 0%, #8B0000 50%, #a00c0c 100%);
             color: #ffffff;
             text-align: center;
-            padding: 25px 10px;
-            font-size: 28px;
-            font-weight: bold;
+            padding: 28px 16px 24px;
+            box-shadow: 0 4px 20px rgba(112, 0, 0, 0.25);
+            position: relative;
         }
 
+        .header-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            backdrop-filter: blur(8px);
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Main Container */
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: center;
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 16px 40px;
+            flex: 1;
         }
 
-        .button {
-            display: block;
-            max-width: 700px;
-            margin: 14px auto;
-            padding: 16px 20px;
-            background-color: #8B0000;
-            color: #ffffff;
+        /* Menu Section / Buttons */
+        .menu-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+            padding-left: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            background: var(--surface);
+            padding: 16px 18px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 17px;
-            font-weight: bold;
-            transition: 0.3s;
+            color: var(--text-main);
+            box-shadow: var(--shadow-sm);
             cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
         }
 
-        .button:hover {
-            background-color: #a30000;
+        .menu-item:hover {
+            transform: translateY(-2px);
+            border-color: #cbd5e1;
+            box-shadow: var(--shadow-md);
         }
 
+        .menu-item:active {
+            transform: scale(0.985);
+            background-color: #fafafa;
+        }
+
+        .menu-item-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .menu-icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background-color: var(--primary-subtle);
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .menu-item-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.35;
+        }
+
+        .menu-item-arrow {
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .menu-item:hover .menu-item-arrow {
+            transform: translateX(3px);
+            color: var(--primary);
+        }
+
+        /* Detail Section Cards */
         .section {
             display: none;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            padding: 22px 18px;
+            box-shadow: var(--shadow-md);
+            animation: fadeIn 0.25s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 18px;
+        }
+
+        .section-icon-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--primary-subtle);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        /* Notice / Alert Box */
+        .info-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 14px 16px;
+            margin-bottom: 16px;
+        }
+
+        .info-card-title {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Rules list */
+        .rules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #ffffff;
+            border: 1px solid #eef2f6;
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-size: 14.5px;
+            color: #334155;
+            line-height: 1.45;
+        }
+
+        .rule-icon {
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .rule-item.warning-rule {
+            background: #fffbeb;
+            border-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .rule-item.warning-rule .rule-icon {
+            color: #d97706;
+        }
+
+        /* Action Callout Box (Telegram + Phone) */
+        .action-banner {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+            border: 1px solid #fed7aa;
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin: 18px 0;
+            color: #7c2d12;
+            font-size: 14.5px;
+            line-height: 1.5;
+        }
+
+        .action-banner-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #9a3412;
+        }
+
+        .action-banner a {
+            color: #c2410c;
+            font-weight: 700;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+
+        .contact-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .contact-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #fdba74;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #9a3412;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .contact-chip:hover {
+            background-color: #fff7ed;
+        }
+
+        /* Image Wrapper & Preview */
+        .image-wrapper {
             margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #dddddd;
-            border-radius: 8px;
-            text-align: left;
-            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .image-header-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            padding: 0 4px;
+        }
+
+        .image-container {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            cursor: pointer;
         }
 
         .a4-image {
             display: block;
-            margin: 20px auto;
-            width: 100%;       /* ekran kengligiga moslashadi */
-            max-width: 794px;  /* A4 kengligi piksel */
-            height: auto;      /* proporsiyani saqlaydi */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.2s;
         }
 
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 18px;
-            background-color: #8B0000;
-            color: #fff;
-            border-radius: 6px;
-            font-weight: bold;
+        .image-zoom-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+        }
+
+        /* Lightbox Modal for Mobile Zoom */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            transition: 0.3s;
+            backdrop-filter: blur(4px);
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Buttons (Back, actions) */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 220px;
+            margin-top: 16px;
+            padding: 13px 20px;
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(139, 0, 0, 0.25);
         }
 
         .back-button:hover {
-            background-color: #a30000;
+            background-color: var(--primary-light);
+            transform: translateY(-1px);
         }
 
+        .back-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Simple text status boxes for closed/info sections */
+        .status-box {
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            font-size: 14.5px;
+            line-height: 1.5;
+        }
+
+        .status-box.closed {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-box.info {
+            background-color: #f0fdf4;
+            border: 1px solid #dcfce7;
+            color: #166534;
+        }
+
+        /* Contact Footer */
         .contact {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #dddddd;
-            text-align: center;
+            margin-top: 36px;
+            padding: 24px 18px;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
         }
 
-        .contact h3 {
-            margin-bottom: 15px;
-        }
-
-        .contact p {
-            margin: 6px 0;
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .contact a {
-            color: #8B0000;
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 14px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
             text-decoration: none;
-            font-weight: bold;
+            color: var(--text-main);
+            transition: all 0.2s;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
+        .contact-card:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .contact-card:active {
+            transform: scale(0.985);
+        }
+
+        .contact-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon.phone {
+            background: #ecfdf5;
+            color: #059669;
+        }
+
+        .contact-icon.bot {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .contact-icon.channel {
+            background: #fdf2f8;
+            color: #db2777;
+        }
+
+        .contact-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .contact-value {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            word-break: break-all;
+        }
+
+        /* Footer Copyright */
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 24px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .header {
+                padding: 22px 14px 18px;
+            }
+
+            .header h1 {
+                font-size: 19px;
+            }
+
+            .container {
+                padding: 16px 12px 30px;
+            }
+
+            .section {
+                padding: 18px 14px;
+            }
+
+            .menu-item {
+                padding: 14px;
+            }
+
+            .menu-item-text {
+                font-size: 14.5px;
+            }
+
+            .rule-item {
+                font-size: 14px;
+                padding: 10px 12px;
+            }
+
+            .action-banner {
+                font-size: 14px;
+                padding: 14px;
+            }
+
+            .back-button {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    ARIZA YOZISH TARTIBLARI
-</div>
+<!-- Header -->
+<header class="header">
+    <div class="header-icon">
+        <i data-lucide="file-text" style="width: 26px; height: 26px;"></i>
+    </div>
+    <h1>Ariza Yozish Tartiblari</h1>
+    <p>ISFT Instituti talabalari uchun rasmiy shablonlar</p>
+</header>
 
 <div class="container">
-    <!-- Asosiy tugmalar -->
+    <!-- Asosiy tugmalar (Menu) -->
     <div id="main-buttons">
-        <div class="button" onclick="showSection('chaqiruv')">
-            Chaqiruv yoki guruh o‘zgartirish bo‘yicha ariza shabloni
+        <div class="menu-title">
+            <i data-lucide="layers" style="width: 16px; height: 16px;"></i>
+            Ariza turlari
         </div>
-        <div class="button" onclick="showSection('kochirish')">
-            Samarqand v-ga o‘qish ko‘chirish bo‘yicha ariza shabloni
-        </div>
-        <div class="button" onclick="showSection('familiya')">
-            Familiya o‘zgartirish bo‘yicha ariza shabloni
-        </div>
-        <div class="button" onclick="showSection('akademik')">
-            Akademik ta’til uchun ariza yozish tartibi
-        </div>
-        <div class="button" onclick="showSection('appilatsiya')">
-            Imtihon ballari bo‘yicha appilatsiyaga ariza shabloni
-        </div>
-        <div class="button" onclick="showSection('kontrakt')">
-            Kontrakt to‘lovi bo‘yicha ariza yozish tartibi
+
+        <div class="menu-list">
+            <div class="menu-item" onclick="showSection('chaqiruv')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">
+                        <i data-lucide="file-signature" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <span class="menu-item-text">Chaqiruv yoki guruh o‘zgartirish bo‘yicha ariza shabloni</span>
+                </div>
+                <div class="menu-item-arrow">
+                    <i data-lucide="chevron-right" style="width: 20px; height: 20px;"></i>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showSection('kochirish')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">
+                        <i data-lucide="arrow-left-right" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <span class="menu-item-text">Samarqand v-ga o‘qish ko‘chirish bo‘yicha ariza shabloni</span>
+                </div>
+                <div class="menu-item-arrow">
+                    <i data-lucide="chevron-right" style="width: 20px; height: 20px;"></i>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showSection('familiya')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">
+                        <i data-lucide="user-check" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <span class="menu-item-text">Familiya o‘zgartirish bo‘yicha ariza shabloni</span>
+                </div>
+                <div class="menu-item-arrow">
+                    <i data-lucide="chevron-right" style="width: 20px; height: 20px;"></i>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showSection('akademik')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">
+                        <i data-lucide="pause-circle" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <span class="menu-item-text">Akademik ta’til uchun ariza yozish tartibi</span>
+                </div>
+                <div class="menu-item-arrow">
+                    <i data-lucide="chevron-right" style="width: 20px; height: 20px;"></i>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showSection('appilatsiya')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">
+                        <i data-lucide="help-circle" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <span class="menu-item-text">Imtihon ballari bo‘yicha appilatsiyaga ariza shabloni</span>
+                </div>
+                <div class="menu-item-arrow">
+                    <i data-lucide="chevron-right" style="width: 20px; height: 20px;"></i>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="showSection('kontrakt')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">
+                        <i data-lucide="credit-card" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <span class="menu-item-text">Kontrakt to‘lovi bo‘yicha ariza yozish tartibi</span>
+                </div>
+                <div class="menu-item-arrow">
+                    <i data-lucide="chevron-right" style="width: 20px; height: 20px;"></i>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Bo'limlar -->
+    <!-- BO'LIMLAR (Sections) -->
+
+    <!-- 1. Chaqiruv yoki guruh o'zgartirish -->
     <div id="chaqiruv" class="section">
-        <h2>Chaqiruv yoki guruh o‘zgartirish arizasi</h2>
-        <p><h3>Chaqiruv yoki guruh o'zgartirish bo'yicha arizalar qabul qilish yakunlangan sababi o'quv yili yakunlangan.</h3></p>
-       <!-- <img src="images/chaqiruv.jpg" alt="Chaqiruv arizasi" class="a4-image"> -->
-        <div class="back-button" onclick="hideSection('chaqiruv')">Ortga</div>
+        <div class="section-header">
+            <div class="section-icon-badge">
+                <i data-lucide="file-signature" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h2 class="section-title">Chaqiruv yoki guruh o‘zgartirish arizasi</h2>
+        </div>
+
+        <div class="info-card">
+            <div class="info-card-title">
+                <i data-lucide="info" style="width: 18px; height: 18px;"></i>
+                Diqqat qiling!
+            </div>
+            <p>Hurmatli talaba, ariza yozish tartiblari bilan diqqat bilan tanishib chiqing!</p>
+        </div>
+
+        <div class="rules-list">
+            <div class="rule-item">
+                <i data-lucide="pen-tool" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Ushbu rasmga qarab yoki buni chiqazib olasiz, arizani shaxsan o‘z qo‘lingiz bilan yozishingiz kerak.</span>
+            </div>
+
+            <div class="rule-item">
+                <i data-lucide="file-check" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Arizaga hujjatli asos bo‘lishi shart, aks holda ariza qabul qilinmaydi.</span>
+            </div>
+
+            <div class="rule-item warning-rule">
+                <i data-lucide="alert-triangle" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>To‘liq kompyuterda yozilgan ariza qabul qilinmay rad etiladi.</span>
+            </div>
+        </div>
+
+        <!-- Operator / Bot ogohlantirish banneri -->
+        <div class="action-banner">
+            <div class="action-banner-header">
+                <i data-lucide="bell-ring" style="width: 18px; height: 18px;"></i>
+                Muhim eslatma:
+            </div>
+            <p>Arizani yozib <a href="https://t.me/isftstudents_bot" target="_blank">@isftstudents_bot</a> ga yuborganingizdan so‘ng operatorlarimizga <a href="tel:+998555083737">+998 55 508 37 37</a> raqamiga aloqaga chiqib, ariza va hujjatlarni yuborib qo‘ydim deb ogohlantirib qo‘yishingizni so‘raymiz!</p>
+            
+            <div class="contact-chips">
+                <a href="https://t.me/isftstudents_bot" target="_blank" class="contact-chip">
+                    <i data-lucide="send" style="width: 15px; height: 15px;"></i>
+                    @isftstudents_bot
+                </a>
+                <a href="tel:+998555083737" class="contact-chip">
+                    <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+                    +998 55 508 37 37
+                </a>
+            </div>
+        </div>
+
+        <!-- Ariza namunasi rasmi -->
+        <div class="image-wrapper">
+            <div class="image-header-label">
+                <span>Ariza namunasi (A4 format)</span>
+                <span>Kattalashtirish uchun bosing</span>
+            </div>
+            <div class="image-container" onclick="openImageModal('images/chaqiruv.jpg')">
+                <img src="images/chaqiruv.jpg" alt="Chaqiruv yoki guruh o‘zgartirish arizasi shabloni" class="a4-image" loading="lazy">
+                <div class="image-zoom-hint">
+                    <i data-lucide="zoom-in" style="width: 14px; height: 14px;"></i>
+                    To‘liq ko‘rish
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="back-button" onclick="hideSection('chaqiruv')">
+            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+            Ortga qaytish
+        </button>
     </div>
 
+    <!-- 2. Samarqandga ko'chirish -->
     <div id="kochirish" class="section">
-        <h2>Samarqandga o‘qish ko‘chirish bo‘yicha ariza shabloni</h2>
-        <p><h3>Hozirda o'qishni Samarqand viloyatidagi o'quv binosiga ko'chirish bo'yicha arizalar qabul qilinmayabdi.</h3></p>
-        <p>O'qishingizni Samarqand viloyatidagi filialimizga ko'chirish uchun iyul oyining 15 sanasidan so'ng xabar olishingiz mumkin.</p>
-        <p><b></b></p>
-        <div class="back-button" onclick="hideSection('kochirish')">Ortga</div>
+        <div class="section-header">
+            <div class="section-icon-badge">
+                <i data-lucide="arrow-left-right" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h2 class="section-title">Samarqandga o‘qish ko‘chirish</h2>
+        </div>
+
+        <div class="status-box closed">
+            <div style="font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                <i data-lucide="alert-circle" style="width: 18px; height: 18px;"></i>
+                Arizalar qabuli to‘xtatilgan
+            </div>
+            <p>Hozirda o‘qishni Samarqand viloyatidagi o‘quv binosiga ko‘chirish bo‘yicha arizalar qabul qilinmayapti.</p>
+        </div>
+
+        <div class="rule-item">
+            <i data-lucide="calendar" class="rule-icon" style="width: 18px; height: 18px;"></i>
+            <span>O‘qishingizni Samarqand viloyatidagi filialimizga ko‘chirish uchun iyul oyining 15-sanasidan so‘ng xabar olishingiz mumkin.</span>
+        </div>
+
+        <button type="button" class="back-button" onclick="hideSection('kochirish')">
+            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+            Ortga qaytish
+        </button>
     </div>
 
+    <!-- 3. Familiya o'zgartirish -->
     <div id="familiya" class="section">
-        <h2>Familiya o‘zgartirish bo‘yicha ariza shabloni</h2>
-        <p>Hurmatli talaba, ariza yozish tartiblari bilan diqqat bilan tanishib chiqing!</p>
-        <p>*Ariza shabloniga qarab A4 formatga qo'lda yozib berishingiz kerak;</p>
-        <p>*Arizani PDF formatda yuborib berishingiz kerak;</p>
-        <p>*Arizaga qo'shib yangi passportingiz (oldi-orqa) va ZAKS qog'ozini taqdim qilishingiz lozim;</p>
-        <p><h3>Eslatib o'tamiz, arizani yozib botga yuborganingizdan so'ng operatorlarimizga aloqaga chiqib ariza yuborib qo'ydim deb ogohlantirib qo'yishingizni so'raymiz.</h3></p>
-        <img src="images/familiya.jpg" alt="Familya arizasi" class="a4-image">
-        <div class="back-button" onclick="hideSection('familiya')">Ortga</div>
+        <div class="section-header">
+            <div class="section-icon-badge">
+                <i data-lucide="user-check" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h2 class="section-title">Familiya o‘zgartirish bo‘yicha ariza</h2>
+        </div>
+
+        <div class="info-card">
+            <div class="info-card-title">
+                <i data-lucide="info" style="width: 18px; height: 18px;"></i>
+                Diqqat qiling!
+            </div>
+            <p>Hurmatli talaba, ariza yozish tartiblari bilan diqqat bilan tanishib chiqing!</p>
+        </div>
+
+        <div class="rules-list">
+            <div class="rule-item">
+                <i data-lucide="pen-tool" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Ariza shabloniga qarab A4 formatga qo‘lda yozib berishingiz kerak;</span>
+            </div>
+            <div class="rule-item">
+                <i data-lucide="file-text" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Arizani PDF formatda yuborib berishingiz kerak;</span>
+            </div>
+            <div class="rule-item">
+                <i data-lucide="file-check" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Arizaga qo‘shib yangi passportingiz (oldi-orqa) va FHDYo (ZAKS) qog‘ozini taqdim qilishingiz lozim;</span>
+            </div>
+        </div>
+
+        <div class="action-banner">
+            <div class="action-banner-header">
+                <i data-lucide="bell-ring" style="width: 18px; height: 18px;"></i>
+                Eslatib o‘tamiz:
+            </div>
+            <p>Arizani yozib botga yuborganingizdan so‘ng operatorlarimizga aloqaga chiqib ariza yuborib qo‘ydim deb ogohlantirib qo‘yishingizni so‘raymiz.</p>
+            
+            <div class="contact-chips">
+                <a href="https://t.me/isftstudents_bot" target="_blank" class="contact-chip">
+                    <i data-lucide="send" style="width: 15px; height: 15px;"></i>
+                    @isftstudents_bot
+                </a>
+                <a href="tel:+998555083737" class="contact-chip">
+                    <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+                    +998 55 508 37 37
+                </a>
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="image-header-label">
+                <span>Ariza namunasi (A4 format)</span>
+                <span>Kattalashtirish uchun bosing</span>
+            </div>
+            <div class="image-container" onclick="openImageModal('images/familiya.jpg')">
+                <img src="images/familiya.jpg" alt="Familiya arizasi shabloni" class="a4-image" loading="lazy">
+                <div class="image-zoom-hint">
+                    <i data-lucide="zoom-in" style="width: 14px; height: 14px;"></i>
+                    To‘liq ko‘rish
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="back-button" onclick="hideSection('familiya')">
+            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+            Ortga qaytish
+        </button>
     </div>
 
+    <!-- 4. Akademik ta'til -->
     <div id="akademik" class="section">
-        <h2>Akademik ta’til arizasi</h2>
-        <p><h3>Hurmatli talaba!</h3></p>
-        <p>Akademik ta'til yoki o'qish muzlatish uchun arizalarni faqat o'quv binosiga tashrif buyurib yozasiz!</p>
-        <div class="back-button" onclick="hideSection('akademik')">Ortga</div>
+        <div class="section-header">
+            <div class="section-icon-badge">
+                <i data-lucide="pause-circle" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h2 class="section-title">Akademik ta’til arizasi</h2>
+        </div>
+
+        <div class="info-card">
+            <div class="info-card-title">
+                <i data-lucide="info" style="width: 18px; height: 18px;"></i>
+                Hurmatli talaba!
+            </div>
+            <p>Akademik ta’til yoki o‘qishni muzlatish uchun arizalarni <strong>faqat o‘quv binosiga shaxsan tashrif buyurib</strong> yozasiz!</p>
+        </div>
+
+        <div class="rule-item">
+            <i data-lucide="building-2" class="rule-icon" style="width: 18px; height: 18px;"></i>
+            <span>Institut dekanatiga shaxsingizni tasdiqlovchi hujjat (pasport/ID-karta) bilan murojaat qiling.</span>
+        </div>
+
+        <button type="button" class="back-button" onclick="hideSection('akademik')">
+            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+            Ortga qaytish
+        </button>
     </div>
 
+    <!-- 5. Appilatsiya -->
     <div id="appilatsiya" class="section">
-        <h2>Imtihon ballari bo'yicha appilatsiya arizasi</h2>
-        <p><b>Hurmatli talaba!</b></p>
-        <p>Imtihon ballari bo'yicha apilatsiyaga ariza yozish uchun shablonni operatorlardan olasiz!</p>
-        <div class="back-button" onclick="hideSection('appilatsiya')">Ortga</div>
+        <div class="section-header">
+            <div class="section-icon-badge">
+                <i data-lucide="help-circle" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h2 class="section-title">Imtihon ballari bo‘yicha appilatsiya</h2>
+        </div>
+
+        <div class="info-card">
+            <div class="info-card-title">
+                <i data-lucide="info" style="width: 18px; height: 18px;"></i>
+                Hurmatli talaba!
+            </div>
+            <p>Imtihon ballari bo‘yicha appilatsiyaga ariza yozish uchun shablonni operatorlardan olasiz!</p>
+        </div>
+
+        <div class="action-banner">
+            <div class="action-banner-header">
+                <i data-lucide="headphones" style="width: 18px; height: 18px;"></i>
+                Operator bilan bog‘lanish:
+            </div>
+            <div class="contact-chips">
+                <a href="https://t.me/isftstudents_bot" target="_blank" class="contact-chip">
+                    <i data-lucide="send" style="width: 15px; height: 15px;"></i>
+                    @isftstudents_bot
+                </a>
+                <a href="tel:+998555083737" class="contact-chip">
+                    <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+                    +998 55 508 37 37
+                </a>
+            </div>
+        </div>
+
+        <button type="button" class="back-button" onclick="hideSection('appilatsiya')">
+            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+            Ortga qaytish
+        </button>
     </div>
 
+    <!-- 6. Kontrakt to'lovi -->
     <div id="kontrakt" class="section">
-        <h2>Kontrakt to‘lovi bo'yicha ariza</h2>
-        <p><b>Hurmatli talaba!</b></p>
-        <p>Kontrakt to'lovi bo'yicha ariza shablonini operatorlar bilan gaplashib operatorlarimiz tomonidan olasiz!</p>
-        <div class="back-button" onclick="hideSection('kontrakt')">Ortga</div>
+        <div class="section-header">
+            <div class="section-icon-badge">
+                <i data-lucide="credit-card" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h2 class="section-title">Kontrakt to‘lovi bo‘yicha ariza</h2>
+        </div>
+
+        <div class="info-card">
+            <div class="info-card-title">
+                <i data-lucide="info" style="width: 18px; height: 18px;"></i>
+                Hurmatli talaba!
+            </div>
+            <p>Kontrakt to‘lovi bo‘yicha ariza shablonini operatorlar bilan bog‘langan holda olasiz!</p>
+        </div>
+
+        <div class="action-banner">
+            <div class="action-banner-header">
+                <i data-lucide="headphones" style="width: 18px; height: 18px;"></i>
+                Operator bilan bog‘lanish:
+            </div>
+            <div class="contact-chips">
+                <a href="https://t.me/isftstudents_bot" target="_blank" class="contact-chip">
+                    <i data-lucide="send" style="width: 15px; height: 15px;"></i>
+                    @isftstudents_bot
+                </a>
+                <a href="tel:+998555083737" class="contact-chip">
+                    <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+                    +998 55 508 37 37
+                </a>
+            </div>
+        </div>
+
+        <button type="button" class="back-button" onclick="hideSection('kontrakt')">
+            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+            Ortga qaytish
+        </button>
     </div>
 
-    <!-- Aloqa -->
+    <!-- Aloqa bloki (Footer Contacts) -->
     <div class="contact">
-        <h3>Aloqa uchun</h3>
-        <p>📞 +998 55 508 37 37</p>
-        <p>🤖 Rasmiy telegram bot:
-            <a href="https://t.me/isftstudents_bot" target="_blank">@isftstudents_bot</a>
-        </p>
-        <p>📢 Rasmiy telegram kanal:
-            <a href="https://t.me/isft7" target="_blank">@isft7</a>
-        </p>
+        <div class="contact-header">
+            <i data-lucide="headset" style="width: 20px; height: 20px; color: var(--primary);"></i>
+            Aloqa va qo‘llab-quvvatlash
+        </div>
+
+        <div class="contact-grid">
+            <a href="tel:+998555083737" class="contact-card">
+                <div class="contact-icon phone">
+                    <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-label">Call-markaz</div>
+                    <div class="contact-value">+998 55 508 37 37</div>
+                </div>
+                <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: #94a3b8;"></i>
+            </a>
+
+            <a href="https://t.me/isftstudents_bot" target="_blank" class="contact-card">
+                <div class="contact-icon bot">
+                    <i data-lucide="bot" style="width: 20px; height: 20px;"></i>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-label">Rasmiy Telegram bot</div>
+                    <div class="contact-value">@isftstudents_bot</div>
+                </div>
+                <i data-lucide="external-link" style="width: 18px; height: 18px; color: #94a3b8;"></i>
+            </a>
+
+            <a href="https://t.me/isft7" target="_blank" class="contact-card">
+                <div class="contact-icon channel">
+                    <i data-lucide="megaphone" style="width: 20px; height: 20px;"></i>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-label">Rasmiy Telegram kanal</div>
+                    <div class="contact-value">@isft7</div>
+                </div>
+                <i data-lucide="external-link" style="width: 18px; height: 18px; color: #94a3b8;"></i>
+            </a>
+        </div>
     </div>
+
+    <div class="footer-note">
+        ISFT Instituti &copy; 2026. Barcha huquqlar himoyalangan.
+    </div>
+</div>
+
+<!-- Image Zoom Lightbox Modal -->
+<div id="imageModal" class="modal" onclick="closeImageModal()">
+    <button type="button" class="modal-close" onclick="closeImageModal()" aria-label="Yopish">
+        <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+    </button>
+    <img id="modalImg" class="modal-content" src="" alt="To‘liq ariza namunasi" onclick="event.stopPropagation()">
 </div>
 
 <script>
+    // Initialize Lucide Icons
+    function refreshIcons() {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        refreshIcons();
+    });
+
     function showSection(id) {
         document.getElementById('main-buttons').style.display = 'none';
-        document.getElementById(id).style.display = 'block';
+        
+        // Hide all sections first
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(sec) {
+            sec.style.display = 'none';
+        });
+
+        // Show target section
+        var target = document.getElementById(id);
+        if (target) {
+            target.style.display = 'block';
+            refreshIcons();
+        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function hideSection(id) {
-        document.getElementById(id).style.display = 'none';
+        var target = document.getElementById(id);
+        if (target) {
+            target.style.display = 'none';
+        }
         document.getElementById('main-buttons').style.display = 'block';
+        refreshIcons();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Modal Image Preview
+    function openImageModal(src) {
+        var modal = document.getElementById('imageModal');
+        var modalImg = document.getElementById('modalImg');
+        modalImg.src = src;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // prevent background scrolling
+        refreshIcons();
+    }
+
+    function closeImageModal() {
+        var modal = document.getElementById('imageModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeImageModal();
+        }
+    });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
