@@ -828,20 +828,67 @@
             <div class="section-icon-badge">
                 <i data-lucide="arrow-left-right" style="width: 24px; height: 24px;"></i>
             </div>
-            <h2 class="section-title">Samarqandga o‘qish ko‘chirish</h2>
+            <h2 class="section-title">Samarqandga o‘qish ko‘chirish bo‘yicha ariza</h2>
         </div>
 
-        <div class="status-box closed">
-            <div style="font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="alert-circle" style="width: 18px; height: 18px;"></i>
-                Arizalar qabuli to‘xtatilgan
+        <div class="info-card">
+            <div class="info-card-title">
+                <i data-lucide="info" style="width: 18px; height: 18px;"></i>
+                Diqqat qiling!
             </div>
-            <p>Hozirda o‘qishni Samarqand viloyatidagi o‘quv binosiga ko‘chirish bo‘yicha arizalar qabul qilinmayapti.</p>
+            <p>Hurmatli talaba, Samarqand filialiga o‘qishni ko‘chirish bo‘yicha ariza yozish tartiblari bilan diqqat bilan tanishib chiqing!</p>
         </div>
 
-        <div class="rule-item">
-            <i data-lucide="calendar" class="rule-icon" style="width: 18px; height: 18px;"></i>
-            <span>O‘qishingizni Samarqand viloyatidagi filialimizga ko‘chirish uchun iyul oyining 15-sanasidan so‘ng xabar olishingiz mumkin.</span>
+        <div class="rules-list">
+            <div class="rule-item">
+                <i data-lucide="pen-tool" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Arizani namunadagi shablonga qarab, oq qog‘ozga (A4) shaxsan o‘z qo‘lingiz bilan ruchkada yozishingiz kerak.</span>
+            </div>
+
+            <div class="rule-item">
+                <i data-lucide="file-text" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Arizani sifatli rasmga olib yoki iloji bo‘lsa PDF formatda yuborib berishingiz so‘raladi.</span>
+            </div>
+
+            <div class="rule-item warning-rule">
+                <i data-lucide="alert-triangle" class="rule-icon" style="width: 18px; height: 18px;"></i>
+                <span>Kompyuter yoki telefonda elektron yozilgan (qo‘lda ruchka bilan yozilmagan) arizalar qabul qilinmaydi.</span>
+            </div>
+        </div>
+
+        <!-- Operator / Bot ogohlantirish banneri -->
+        <div class="action-banner">
+            <div class="action-banner-header">
+                <i data-lucide="bell-ring" style="width: 18px; height: 18px;"></i>
+                Muhim eslatma:
+            </div>
+            <p>Arizani yozib <a href="https://t.me/isftstudents_bot" target="_blank">@isftstudents_bot</a> ga yuborganingizdan so‘ng operatorlarimizga <a href="tel:+998555083737">+998 55 508 37 37</a> raqamiga aloqaga chiqib, ariza yuborib qo‘ydim deb ogohlantirib qo‘yishingizni so‘raymiz!</p>
+            
+            <div class="contact-chips">
+                <a href="https://t.me/isftstudents_bot" target="_blank" class="contact-chip">
+                    <i data-lucide="send" style="width: 15px; height: 15px;"></i>
+                    @isftstudents_bot
+                </a>
+                <a href="tel:+998555083737" class="contact-chip">
+                    <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+                    +998 55 508 37 37
+                </a>
+            </div>
+        </div>
+
+        <!-- Ariza namunasi rasmi -->
+        <div class="image-wrapper">
+            <div class="image-header-label">
+                <span>Ariza namunasi (A4 format)</span>
+                <span>Kattalashtirish uchun bosing</span>
+            </div>
+            <div class="image-container" onclick="openImageModal('images/samarqand.jpg')">
+                <img src="images/samarqand.jpg" alt="Samarqandga o‘qish ko‘chirish arizasi shabloni" class="a4-image" loading="lazy">
+                <div class="image-zoom-hint">
+                    <i data-lucide="zoom-in" style="width: 14px; height: 14px;"></i>
+                    To‘liq ko‘rish
+                </div>
+            </div>
         </div>
 
         <button type="button" class="back-button" onclick="hideSection('kochirish')">
